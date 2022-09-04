@@ -1,5 +1,6 @@
 #baseURL = "https://knative.dev"
-baseURL = "https://davidhadas.github.io/knwebsite"
+#baseURL = "https://davidhadas.github.io/knwebsite"
+baseURL = "/"
 title = "Knative"
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
