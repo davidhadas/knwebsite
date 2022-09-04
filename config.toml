@@ -301,7 +301,7 @@ url = "https://knative.dev/docs/getting-started/"
 [[menu.main]]
 name = "CLI"
 weight = 60
-url = "https://knative.dev/docs/docs/client/"
+url = "https://knative.dev/docs/client/"
 
 [[menu.main]]
 name = "Community"

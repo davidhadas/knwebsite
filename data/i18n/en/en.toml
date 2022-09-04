@@ -190,7 +190,7 @@ other = "Fetching results..."
 other = "by"
 
 [main_cncf_project]
-other = """We are a <a href="https://cncf.io/">CNCF</a> graduated project</p>"""
+other = """We are a <a href="https://cncf.io/">CNCF</a> project</p>"""
 
 [main_community_explore]
 other = "Explore the community"
@@ -202,7 +202,7 @@ other = "Contribute"
 other = """The Linux Foundation &reg;. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>"""
 
 [main_documentation_license]
-other = """The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a>"""
+other = """The Knative Authors | Documentation Distributed under <a href="https://github.com/knative/docs/blob/main/LICENSE-docs" class="light-text">CC BY 4.0</a>"""
 
 [main_github_invite]
 other = "Interested in hacking on the core Kubernetes code base?"
