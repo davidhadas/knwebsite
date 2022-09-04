@@ -101,7 +101,7 @@ body.td-404 main .error-details {
 .td-navbar {
   position: fixed !important;
   width: 100%;
-  padding-bottom: 1rem !important;
+  padding-bottom: 2.5rem !important;
   background: transparent !important;
   transition: 0.3s;
 
@@ -111,8 +111,15 @@ body.td-404 main .error-details {
     height: 44px;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url("/images/favicon.png");
+    padding-bottom: 2rem;
+
+    //background-image: url("/images/favicon.png");
   }
+
+
+
+
+  
 
   #hamburger {
     &:focus {
@@ -122,10 +129,16 @@ body.td-404 main .error-details {
 
   @media only screen and (min-width: 768px) {
     .navbar-brand {
-      background-image: url("/images/knative_logo.png");
-      top: 1.5rem;
+    //  background-image: url("/images/knative_logo.png");
+      top: 0.5rem;
       width: 180px;
       margin-left: 1rem;
+    }
+    .navbar-dark {
+      display: inline;
+    }
+    .navbar-light {
+      display: none;
     }
   }
 }
@@ -173,6 +186,7 @@ body.td-404 main .error-details {
   background-color: white !important;
   box-shadow: 0 1px 2px $medium-grey;
 
+  
   .navbar-nav {
     .nav-item {
       &.show .nav-link,
@@ -210,8 +224,14 @@ body.td-404 main .error-details {
 
   @media only screen and (min-width: 768px) {
     .navbar-brand {
-      background-image: url("/images/knative_logo2.png");
+    //  background-image: url("/images/knative_logo2.png");
     }
+  }
+  .navbar-dark {
+    display: none;
+  }
+  .navbar-light {
+    display: inline;
   }
 }
 
@@ -376,6 +396,7 @@ body {
     margin-top: 1.5em;
   }
 }
+
 
 // Special color for third party content disclaimers
 .alert.third-party-content { border-left-color: #222 };

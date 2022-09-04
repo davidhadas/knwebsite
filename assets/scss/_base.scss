@@ -427,9 +427,31 @@ $feature-box-div-margin-bottom: 40px;
   &.flip-nav,
   &.open-nav {
     .logo {
-      background-image: url("/images/knative_logo2.png");
+      //background-image: url("/images/knative_logo2.png");
+    }
+    .navbar-dark {
+      display: none;
+    }
+    .navbar-light {
+      display: inline;
     }
   }
+}
+
+.navbar-dark {
+  position: absolute;
+  height: 66px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+}
+
+.navbar-light {
+  position: absolute;
+  height: 66px;
+  background-repeat: no-repeat;
+  background-size: contain;
+ 
 }
 
 .header-hero {
