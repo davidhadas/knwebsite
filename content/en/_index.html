@@ -1,5 +1,5 @@
 ---
-title: "Production-Grade Container Orchestration"
+title: "Kubernetes made simplier and safer"
 abstract: "Automated container deployment, scaling, and management"
 cid: home
 sitemap:
@@ -7,43 +7,81 @@ sitemap:
 ---
 
 {{< blocks/section id="oceanNodes" >}}
-{{% blocks/feature image="flower" %}}
-[Kubernetes]({{< relref "/docs/concepts/overview/" >}}), also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications.
+{{% blocks/feature image="grow" %}}
+[Knative]("http://knative.dev/docs"), offers a Serverless experiance for Kubernetes users.
+Knative gets the job done cheaper, faster and more secure to 
+ease deployments of containerized application.
 
-It groups containers that make up an application into logical units for easy management and discovery. Kubernetes builds upon [15 years of experience of running production workloads at Google](http://queue.acm.org/detail.cfm?id=2898444), combined with best-of-breed ideas and practices from the community.
-{{% /blocks/feature %}}
-
-{{% blocks/feature image="scalable" %}}
-#### Planet Scale
-
-Designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your operations team.
+As a a Kubernetes Native enhancement, Knative offers a simpler, more modern compute model and comes out of the box with application security, eventing and resource management. 
 
 {{% /blocks/feature %}}
 
-{{% blocks/feature image="blocks" %}}
-#### Never Outgrow
+{{% blocks/feature image="automate" %}}
+#### Automation
+Knative eliminates Kubernetes complexities by automating the entire microservice deployment process. 
+Users need only provide a high-level service definition for Knative to derive, create and manage all necessary Kubernetes resources for the microservice to become operational.    
 
-Whether testing locally or running a global enterprise, Kubernetes flexibility grows with you to deliver your applications consistently and easily no matter how complex your need is.
+Knative takes care of the details of networking, scaling, revision tracking, and more; 
+Since all resources are automatically derived, misconfiguration of any of the resources is no longer a possibility.
+                    
+{{% /blocks/feature %}}
+
+{{% blocks/feature image="threeRevisions" %}}
+#### Revision Control
+
+Knative  safeguard against the hazards of deploying new revisions by enabling a smooth and controlled transition between application revisions. 
+For example, a user may initially decide that only 1% of the traffic will be handled by the new revision, and only after gaining sufficent confidance in the new revision, remove the previous one.</p>
+                    
+{{% /blocks/feature %}}
+
+{{% blocks/feature image="AtoB" %}}
+#### Simplicity
+
+Knative offers a much simpler and straightforward CLI tool (See KN) and hide the many implementation details normally exposed to Kubernetes users.    
+
+The number of configuration knobs is drastically reduced requiring less effort to both deploy and then maintain. 
+The user is not required to have a full understanding of Kubernetes which means a higher return on the time invested.
+                    
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature image="autoscale" %}}
+#### Auto-Scale
+
+Knative reduce deployment costs by adjusting the number of pod replicas servicing the application to the actual load as needed.
+This completely eliminates the need for users to pre-provision their applications such to absorb peak time loads. 
+                           
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature image="appBackbone" %}}
+#### Applicatiuon Backbone
+Knative serves as the backbone of your application and removes the need for additional application queuing/eventing systems.  
+
+Knative's handles all inter-microservice communications and queues ingress and internal communications. This helps absorb the application load and enable each layer of your application to auto-scale independently.
+                        
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature image="guard" %}}
+#### Application Security
+
+Knative give you visibility into: (1) when are you targeted, (2) when are you under attack, and (3) when are your services compromised. 
+                            
+It auto-learns security micro-rules for you and allow you to auto-block suspicious requests.
+Knative gives you tools to manage known vulnerabilities in your services, and to block on-going attacks.
 
 {{% /blocks/feature %}}
 
-{{% blocks/feature image="suitcase" %}}
-#### Run K8s Anywhere
-
-Kubernetes is open source giving you the freedom to take advantage of on-premises, hybrid, or public cloud infrastructure, letting you effortlessly move workloads to where it matters to you.
-
-{{% /blocks/feature %}}
 
 {{< /blocks/section >}}
 
-{{< blocks/section id="video" background-image="kub_video_banner_homepage" >}}
+{{< blocks/section id="video" background-image="banner" >}}
 <div class="light-text">
-<h2>The Challenges of Migrating 150+ Microservices to Kubernetes</h2>
-        <p>By Sarah Wells, Technical Director for Operations and Reliability, Financial Times</p>
-        <button id="desktopShowVideoButton" onclick="kub.showVideo()">Watch Video</button>
+<h2>Use Knative when you can, Kubernetes when you must</h2>
         <br>
         <br>
-        <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america" button id="desktopKCButton">Attend KubeCon North America on October 24-28, 2022</a>
+        <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america" button id="desktopKCButton">Attend KnativeCon + KubeCon North America on October 24-28, 2022</a>
         <br>
         <br>
         <br>
@@ -56,6 +94,6 @@ Kubernetes is open source giving you the freedom to take advantage of on-premise
 </div>
 {{< /blocks/section >}}
 
-{{< blocks/kubernetes-features >}}
+{{< blocks/knative-features >}}
 
 {{< blocks/case-studies >}}
