@@ -29,8 +29,11 @@
 {{ end }}
 {{ partialCached "head-css.html" . "asdf" }}
 {{ if and (.Site.Params.offlineSearch) (not .Site.Params.gcs_engine_id) }}
+
 <script src="https://unpkg.com/lunr@2.1.6/lunr.js"></script>
-<script src="/js/offline-search.js"></script>
+
+{{ $offlinesearch := resources.Get "js/offline-search.js"}}
+<script src={{ $offlinesearch }}></script>
 {{end}}
 {{ partial "hooks/head-end.html" . }}
 
@@ -51,7 +54,6 @@
 {{ end }}
   }
 </script>
-<base href="{{ .Site.BaseURL }}">
 <meta name="theme-color" content="#326ce5">
 {{ partial "css.html" . }}
 <!-- Content for social media sharing previews -->
@@ -79,16 +81,23 @@
 <script async src="{{ "js/mermaid-8.13.4.min.js" | relURL }}"></script>
 {{ end }}
 
-<script src="/js/jquery-3.6.0.min.js" intregrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+{{ $jquery := resources.Get "js/jquery-3.6.0.min.js"}}
+<script src={{ $jquery }} intregrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
 
 {{- if eq (lower .Params.cid) "community" -}}
 {{- if eq .Params.community_styles_migrated true -}}
-<link href="/css/community.css" rel="stylesheet"><!-- legacy styles -->
+
+{{ $community := resources.Get "css/community.css"}}
+<link href={{ $community }} rel="stylesheet"><!-- legacy styles -->
 {{- else -}}
-<link href="/css/legacy_community.css" rel="stylesheet">
+
+{{ $legacycommunity := resources.Get "css/legacy_community.css"}}
+<link href={{ $legacycommunity }} rel="stylesheet">
 {{- end -}}
 <script defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 {{- end -}}
-<script src="{{ "/js/script.js" | relURL }}"></script>
+
+{{ $script := resources.Get "js/script.js"}}
+<script src="{{ $script | relURL }}"></script>
 {{ with .Params.js }}{{ range (split . ",") }}<script src="{{ (trim . " ") | relURL }}"></script><!-- custom js added -->
 {{ end }}{{ else }}<!-- no custom js detected -->{{ end }}
