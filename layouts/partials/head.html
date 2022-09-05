@@ -82,7 +82,14 @@
 {{ end }}
 
 {{ $jquery := resources.Get "js/jquery-3.6.0.min.js"}}
-<script src={{ $jquery }} intregrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+{{ if $jquery }}
+  <script src={{ $jquery }} intregrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+{{ else }}
+<script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+{{ end }}
 
 {{- if eq (lower .Params.cid) "community" -}}
 {{- if eq .Params.community_styles_migrated true -}}
@@ -92,12 +99,16 @@
 {{- else -}}
 
 {{ $legacycommunity := resources.Get "css/legacy_community.css"}}
+{{ if $legacycommunity }}
 <link href={{ $legacycommunity }} rel="stylesheet">
+{{ end }}
 {{- end -}}
 <script defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 {{- end -}}
 
 {{ $script := resources.Get "js/script.js"}}
+{{ if $script }}
 <script src="{{ $script | relURL }}"></script>
+{{ end }}
 {{ with .Params.js }}{{ range (split . ",") }}<script src="{{ (trim . " ") | relURL }}"></script><!-- custom js added -->
 {{ end }}{{ else }}<!-- no custom js detected -->{{ end }}
