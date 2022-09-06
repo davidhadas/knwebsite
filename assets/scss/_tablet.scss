@@ -158,8 +158,6 @@ $feature-box-div-width: 45%;
   }
 
   #features {
-    padding-bottom: 60px;
-
     .feature-box {
       margin-bottom: 30px;
 
@@ -180,7 +178,7 @@ $feature-box-div-width: 45%;
     }
   }
 
-  #talkToUs {
+  #caseStudies {
     #bigSocial {
       div {
         width: calc(50% - 15px);
@@ -208,7 +206,7 @@ $feature-box-div-width: 45%;
   }
 
   .td-home #caseStudiesWrapper {
-    div {
+    .caseStudy {
       width: 48%;
     }
   }

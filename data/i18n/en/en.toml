@@ -210,8 +210,14 @@ other = "Interested in hacking on the core Kubernetes code base?"
 [main_github_view_on]
 other = "View On GitHub"
 
+[main_knative_componets]
+other = "Knative Components"
+
 [main_knative_features]
 other = "Beyond Kubernetes"
+
+[main_trusted_by]
+other = "Trusted By"
 
 [main_kubeweekly_baseline]
 other = "Interested in receiving the latest Kubernetes news? Sign up for KubeWeekly."

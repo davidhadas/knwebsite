@@ -1,0 +1,25 @@
+{{ $trustedSection := site.GetPage "trusted"}}
+{{ if not $trustedSection }}
+{{ errorf "[%s] No trusted section found.  Create content/%s/trusted/_index.md"  $.Page.Lang $.Page.Lang }}
+{{ else }}
+{{ $trustedPages := where $trustedSection.Pages "Params.trusted" true }}
+<section id="trusted">
+
+  <div class="main-section">
+    <h3>{{ T "main_trusted_by" }}</h3>
+    <div id="trustedWrapper">
+      {{ range $trustedPages.ByWeight }}
+  
+			{{ $logo := .Resources.GetMatch "**logo*.svg" }}
+			{{ if not $logo }}
+				{{ $logo = .Resources.GetMatch "**logo*.png" }}
+			{{ end }}
+      <div class="logo">
+        {{ with $logo }}<img width=100px src="{{ .RelPermalink }}" alt="{{ .Title }}">{{ end }}
+      </div>
+      {{ end }}  
+     
+    </div>
+  </div>
+</section>
+{{ end }}

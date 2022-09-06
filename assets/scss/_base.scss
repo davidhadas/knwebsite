@@ -673,12 +673,15 @@ section#cncf {
 
 // Features
 #features {
-  padding-top: 140px;
+  padding: 2em;
   background-color: $light-grey;
-  background-image: url(/images/favicon.png);
+  //background-image: url(/images/favicon.png);
   background-position: center 60px;
   background-repeat: no-repeat;
   background-size: 60px;
+  h2 {
+    padding: 1em;
+  }
 }
 
 .feature-box {
@@ -716,8 +719,9 @@ section#cncf {
   }
 }
 
-// Talk to us
-#talkToUs {
+
+#trusted {
+  background-color: $light-grey;
   h3,
   h4 {
     text-align: center;
@@ -735,7 +739,21 @@ section#cncf {
       display: none;
     }
   }
+}
 
+
+// Talk to us
+#caseStudies {
+  h2 {
+    text-align: center;
+    color: #024c93;
+    margin: 0 0 1.5em;
+  }
+
+  hr {
+    margin: 0;
+    border-color: #7dc47e;
+  }
   #bigSocial {
     overflow: hidden;
 
@@ -788,7 +806,16 @@ section#cncf {
 }
 
 .td-home {
-  #talkToUs {
+  #caseStudies {
+    .main-section {
+      padding: 30px 0;
+    }
+
+    h5 {
+      font-size: 20px;
+    }
+  }
+  #trusted {
     .main-section {
       padding: 30px 0;
     }
@@ -803,11 +830,22 @@ section#cncf {
     text-align: center;
     margin-bottom: 30px;
 
-    img {
-      padding-bottom: 1rem;
+    .logo {
+      display: flex;
+      height: 2em;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1em;
     }
 
-    div {
+    img {
+      vertical-align: middle;
+      border-style: none;
+      height: inherit;
+      width: fit-content;
+    }
+
+    .caseStudy {
       position: relative;
       display: inline-block;
       vertical-align: top;
@@ -829,6 +867,23 @@ section#cncf {
       transform: translateX(-50%);
       color: $blue;
       font-weight: 400;
+    }
+  }
+  #trustedWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+      
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 120pt;
+      height: 36pt;
+      img {
+        max-width: 86pt;
+        max-height: 24pt;
+      }
     }
   }
 }
@@ -898,4 +953,80 @@ section#cncf {
   &:first-of-type.active {
     border-top-left-radius: 0;
   }
+}
+
+.components {
+  background-color: #024c93;
+  color: white;
+  text-align: center;
+  padding: 4em 3em;
+}
+
+
+/* knative components container css */
+.components .main-section h2 {
+  color: #7dc47e;
+}
+
+.components .text-table .normal-text {
+  text-align: start;
+  margin-left: 1%;
+  font-size: .8rem;
+  margin-top: -1rem;
+}
+
+.components .text-table .normal-text:last-child {
+  padding-left: 2em;
+  margin-left: 32%;
+}
+
+.components .components-content img {
+  max-width: 80%;
+  padding: 2em;
+}
+
+.components .text-table  {
+  display: flex;
+  max-width: 80%;
+  margin: auto;
+  padding: 0 2.5em;
+}
+
+
+
+/* text sizing of tables, Alert, Warnings, Notes*/
+.md-typeset table, .md-typeset table:not([class]) {
+  font-size: 100%;
+}
+
+.md-typeset .admonition {
+  font-size: 100%;
+}
+
+.md-typeset .md-button {
+  color: #024c93;
+}
+
+/* Giving h4 tag distinctive style because it is non-differntial with bold text */
+.md-typeset h4 {
+  font-size: .9rem;
+  font-weight: normal;
+}
+
+/* fix wrapping behavior of code in tables */
+.md-typeset table code {
+  word-break: normal;
+}
+
+/* Widen the main column a bit to help with wide tables.
+   Note that extra-wide columns can make it hard to read prose,
+   so there is a tradeoff here. */
+.md-grid {
+  max-width: 68rem;
+}
+
+/*Make definition list definitions stand out*/
+.md-typeset dt {
+  font-weight: bold;
+  font-style: italic;
 }

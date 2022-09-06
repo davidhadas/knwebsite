@@ -1,0 +1,26 @@
+ {{ $image :=  resources.Get "/images/knative_flowchart_graphic.svg"}}
+
+
+<section class="components">
+    <div class="main-section">
+        <h2 class="center">Knative Components</h2>
+        <p class="normal-text">
+            Knative has two main components that can work together to empower teams working with Kubernetes. Serving and<br>
+            Eventing work together to automate and manage to deploy your containers.
+          </p>
+          <div class="components-content">
+            {{ with $image }}<div class="image-wrapper"><img src="{{ .RelPermalink }}" alt="{{ .Title }}"></div>{{ end }}
+            <div class="text-table">
+              <p class="normal-text">
+                Run containers in Kubernetes with ease by manging a single resource per container. 
+                Let Knative take care of the details of networking, autoscaling, revision control and security. 
+                Teams can focus on core logic using any programming language.
+              </p>
+              <p class="normal-text">
+                You may optionaly use Knative's embedded real-time streaming technology to handle communication to your kubernetes loosely coupled services. 
+                Let Knative auto create and maintain a topic for queuing and distributing your incoming service events.
+              </p>
+            </div>
+          </div>
+    </div>
+  </section>

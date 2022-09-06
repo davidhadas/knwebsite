@@ -12,22 +12,35 @@ feature:
     No need to modify your application to use an unfamiliar service discovery mechanism. Kubernetes gives containers their own IP addresses and a single DNS name for a set of containers, and can load-balance across them.
 
 Note that markdown can be used in the description.
-
+<div class="reason-img">
+                    
+    <a href="{{ $link }}"><img width=100px src="{{ $icon.RelPermalink }}"
+        onmouseover="this.src='{{ $icon2.RelPermalink }}'"
+        onmouseout="this.src='{{ $icon.RelPermalink }}'" 
+        alt="" draggable="false">  </a>
+</div>
  */}}
 <section id="features">
     <div class="main-section">
-        <h3 class="center">{{ T "main_knative_features" }}</h3>
+        <h2 class="center">{{ T "main_knative_features" }}</h2>
         {{ $pages := where site.Pages ".Params.feature" "!=" nil }}
         {{range $i, $p := $pages }}
+        
+        {{ $icon := .Resources.GetMatch "**icon.svg" }}
+        {{ $icon2 := .Resources.GetMatch "**icon_o.svg" }}
+                
         {{ if and (gt $i 0) (modBool $i 2) }}</div>{{ end }}
         {{ if modBool $i 2 }}
         <div class="feature-box">
             {{ end }}
             <div>
+               
                 {{ with .Params.feature }}
-                <h4><a href="{{ $p.RelPermalink}}{{ with .anchor }}#{{ . | anchorize }}{{ end }}">{{ .title }}</a></h4>
                 {{ $description := .description | default $p.Params.description }}
+                {{ $link := .link | default "https://knative.dev/docs" }}
+                <h4><a href="{{ $link }}">{{ .title }}</a></h4>
                 {{ $description | markdownify }}
+                
                 {{ end }}
             </div>
      
